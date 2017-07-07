@@ -1,0 +1,30 @@
+{
+  "name": "stringInject",
+  "version": "1.0.0",
+  "description": "Inject an array of items in to a string replacing selected values.",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel --presets es2015,stage-0 -d lib/ src/",
+    "prepublish": "npm run build",
+    "test": "mocha --compilers js:babel-register",
+    "test:watch": "mocha --compilers js:babel-register --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjcafferkey/stringinject.git"
+  },
+  "author": "Tom Cafferkey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tjcafferkey/stringinject/issues"
+  },
+  "homepage": "https://github.com/tjcafferkey/stringinject#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2"
+  }
+}
