@@ -9,7 +9,7 @@ npm install stringinject
 
 ## Usages ##
 
-``` javascript
+```javascript
 var stringInject = require('stringinject');
 ```
 
