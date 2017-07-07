@@ -18,6 +18,7 @@
   "bugs": {
     "url": "https://github.com/tjcafferkey/stringinject/issues"
   },
+  "keywords": ["string", "replace", "inject"],
   "homepage": "https://github.com/tjcafferkey/stringinject#readme",
   "devDependencies": {
     "babel-cli": "^6.24.1",
