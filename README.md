@@ -1,5 +1,5 @@
 # stringinject
-Inject an array of items in to a string replacing selected values.
+Inject an array, or an object of items in to a string replacing selected values.
 
 ## Install ##
 
