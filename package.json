@@ -1,6 +1,6 @@
 {
   "name": "stringinject",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Inject an array of items in to a string replacing selected values.",
   "main": "lib/index.js",
   "scripts": {
