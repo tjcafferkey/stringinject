@@ -33,3 +33,25 @@ describe("pass in incorrect parameters", function() {
         expect(str).to.be.false;
     });
 });
+
+describe("replace object values based on their keys", function() {
+    it("replace object values based on one key", function() {
+        var str = stringInject("My username is {username}", { username: "tjcafferkey" });
+        expect(str).to.equal("My username is tjcafferkey");
+    });
+
+    it("replace object values based on two keys", function() {
+        var str = stringInject("My username is {username} on {platform}", { username: "tjcafferkey", platform: "GitHub" });
+        expect(str).to.equal("My username is tjcafferkey on GitHub");
+    });
+
+    it("replace object values based on two keys in reverse order", function() {
+        var str = stringInject("My username is {platform} on {username}", { username: "tjcafferkey", platform: "GitHub" });
+        expect(str).to.equal("My username is GitHub on tjcafferkey");
+    });
+
+    it("if the key does not exist in the object it will not replace it in the string", function() {
+        var str = stringInject("My username is {platform} on {username}", { username: "tjcafferkey" });
+        expect(str).to.equal("My username is {platform} on tjcafferkey");
+    });
+});

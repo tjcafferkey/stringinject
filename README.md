@@ -9,6 +9,8 @@ npm install stringinject
 
 ## Usages ##
 
+### Arrays ###
+
 ```javascript
 var stringInject = require('stringinject');
 ```
@@ -19,4 +21,14 @@ If you pass stringInject a first parameter of a string which includes placeholde
 var string = stringInject("This is a {0} string for {1}", ["test", "stringInject"]);
 
 // This is a test string for stringInject
+```
+
+### Objects ###
+
+You can also pass in an object with keys that exist as placeholders within the string. It will then find the placeholder based on your key and replace it with the value of that key from your object.
+
+```javascript
+var str = stringInject("My username is {platform} on {username}", { username: "tjcafferkey", platform: "GitHub" });
+
+// My username is tjcafferkey on Github
 ```
