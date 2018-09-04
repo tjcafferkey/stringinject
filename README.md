@@ -12,7 +12,7 @@ npm install stringinject
 ### Arrays ###
 
 ```javascript
-var stringInject = require('stringinject');
+import stringInject from 'stringinject';
 ```
 
 If you pass stringInject a first parameter of a string which includes placeholder values in the format of {0}, {1}, {2} etc. A second parameter which is an Array of 3 string items. It will replace the placeholders, with the Array items in the order specified.
