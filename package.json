@@ -31,5 +31,8 @@
     "babel-register": "^6.24.1",
     "chai": "^4.0.2",
     "mocha": "^3.4.2"
+  },
+  "dependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2"
   }
 }

@@ -1,7 +1,7 @@
 "use strict";
 var expect = require("chai").expect;
 var assert = require("chai").assert;
-var stringInject = require("../lib/index").default;
+import stringInject from '../lib/index';
 
 describe("replace brackets with array items", function() {
     it("should replace brackets {0} in string with array[0]", function() {
