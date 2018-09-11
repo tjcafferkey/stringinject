@@ -6,6 +6,10 @@ export default function stringInject(str, data) {
         });
     } else if (typeof str === 'string' && (data instanceof Object)) {
 
+        if (Object.keys(data).length === 0) {
+            return str;
+        }
+
         for (let key in data) {
             return str.replace(/({([^}]+)})/g, function(i) {
                 let key = i.replace(/{/, '').replace(/}/, '');
@@ -16,6 +20,9 @@ export default function stringInject(str, data) {
                 return data[key];
             });
         }
+    } else if (typeof str === 'string' && data instanceof Array === false || typeof str === 'string' && data instanceof Object === false) {
+
+            return str;
     } else {
 
         return false;

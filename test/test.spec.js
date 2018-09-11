@@ -22,18 +22,6 @@ describe("pass in a string with no {} with an array of items", function() {
     });
 });
 
-describe("pass in incorrect parameters", function() {
-    it("should return false when passed a number instead of a string as first parameter", function() {
-        var str = stringInject(100, ["testing", "stringInject"]);
-        expect(str).to.be.false;
-    });
-
-    it("should return false when passed a number instead of an array as second parameter", function() {
-        var str = stringInject("hello", 1);
-        expect(str).to.be.false;
-    });
-});
-
 describe("replace object values based on their keys", function() {
     it("replace object values based on one key", function() {
         var str = stringInject("My username is {username}", { username: "tjcafferkey" });
@@ -53,5 +41,37 @@ describe("replace object values based on their keys", function() {
     it("if the key does not exist in the object it will not replace it in the string", function() {
         var str = stringInject("My username is {platform} on {username}", { username: "tjcafferkey" });
         expect(str).to.equal("My username is {platform} on tjcafferkey");
+    });
+
+    it("if the object has no keys then it will return the string", function() {
+        var str = stringInject("My username is {platform} on {username}", {});
+        expect(str).to.equal("My username is {platform} on {username}");
+    });
+});
+
+describe("pass in incorrect parameters", function() {
+    it("should return false when passed a number instead of a string as first parameter", function() {
+        var str = stringInject(100, ["testing", "stringInject"]);
+        expect(str).to.be.false;
+    });
+
+    it("should return false when passed a number instead of an array as second parameter", function() {
+        var str = stringInject("hello", 1);
+        expect(str).to.equal("hello");
+    });
+
+    it("if the data param is false bool", function() {
+        var str = stringInject("My username is {platform} on {username}", false);
+        expect(str).to.equal("My username is {platform} on {username}");
+    });
+
+    it("if the data param is true bool", function() {
+        var str = stringInject("My username is {platform} on {username}", true);
+        expect(str).to.equal("My username is {platform} on {username}");
+    });
+
+    it("if the data param is a string", function() {
+        var str = stringInject("My username is {platform} on {username}", "string");
+        expect(str).to.equal("My username is {platform} on {username}");
     });
 });
