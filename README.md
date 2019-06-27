@@ -1,15 +1,16 @@
 # stringinject
+
 Inject an array, or an object of items in to a string replacing selected values.
 
-## Install ##
+## Install
 
 ``` bash
 npm install stringinject
 ```
 
-## Usages ##
+## Usages
 
-### Arrays ###
+### Arrays
 
 ```javascript
 import stringInject from 'stringinject';
@@ -23,7 +24,7 @@ var string = stringInject("This is a {0} string for {1}", ["test", "stringInject
 // This is a test string for stringInject
 ```
 
-### Objects ###
+### Objects
 
 You can also pass in an object with keys that exist as placeholders within the string. It will then find the placeholder based on your key and replace it with the value of that key from your object.
 
