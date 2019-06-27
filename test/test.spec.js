@@ -15,6 +15,26 @@ describe("replace brackets with array items", function() {
     });
 });
 
+describe("replace formated string with array items", function() {
+    it("should replace brackets {0:f} in number with array[0]", function() {
+        var str = stringInject("My id is {0:f}", [42]);
+        expect(str).to.equal("My id is 42");
+    });
+
+    it("should error when a string is given to {0:f}", function() {
+        expect( () => {stringInject("My id is {0:f}", ["not a number"])}).throw(TypeError);
+    });
+
+    it("should replace brackets {0:d} with a number in array[0]", function() {
+        var str = stringInject("My id is {0:d}", [42]);
+        expect(str).to.equal("My id is 42");
+    });
+
+    it("should error when a string is given to {0:d}", function() {
+        expect( () => {stringInject("My id is {0:d}", ["not a number"])}).throw(TypeError);
+    });
+});
+
 describe("pass in a string with no {} with an array of items", function() {
     it("should return the same string as passed in", function() {
         var str = stringInject("This should be the same", ["testing", "stringInject"]);
@@ -49,6 +69,16 @@ describe("replace object values based on their keys", function() {
     });
 });
 
+describe("replace number format with object vaues", function() {
+    it("should replace brackets {0:f} in number with object", function() {
+        var str = stringInject("My id is {id:f}", { id: 42 });
+        expect(str).to.equal("My id is 42");
+    });
+
+    it("should error when a non-number is given to {0:f}", function() {
+        expect( () => {stringInject("My id is {id:f}", { id: "not a number" })}).throw(TypeError);
+    });
+});
 describe("pass in incorrect parameters", function() {
     it("should return false when passed a number instead of a string as first parameter", function() {
         var str = stringInject(100, ["testing", "stringInject"]);
