@@ -13,7 +13,7 @@ export default function stringInject(str, data) {
         for (let key in data) {
             return str.replace(/({([^}]+)})/g, function(i) {
                 let key = i.replace(/{/, '').replace(/}/, '');
-                if (!data[key]) {
+                if (data[key] == null || isNaN(data[key])) {
                     return i;
                 }
 
