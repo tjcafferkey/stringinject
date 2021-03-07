@@ -4,7 +4,7 @@ Inject an array, or an object of items in to a string replacing selected values.
 ## Install ##
 
 ``` bash
-npm install stringinject
+npm install https://github.com/robertkofoed/stringinject
 ```
 
 ## Usages ##
